@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "dashboard switcher",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "dse",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "page switcher browser extension with sharing state between multi pages.",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "dashboard switcher",
+    "description": "The title of the browser action button"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "dashboard-switcher",
+  "version": "0.1.0",
+  "description": "page switcher browser extension with sharing state between multi pages.",
+  "scripts": {
+    "dev": "webextension-toolbox dev chrome",
+    "build": "webextension-toolbox build chrome && webextension-toolbox build firefox && webextension-toolbox build opera && webextension-toolbox build edge",
+    "version": "echo $npm_package_version"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^2.0.1",
+    "@types/firefox-webext-browser": "^82.0.1",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.9.5",
+    "ts-loader": "^9.2.6",
+    "webextension-toolbox": "latest"
+  }
+}
