@@ -1,5 +1,5 @@
-export const MessageKind = {
+export const MessageKey = {
   getData: 'getData',
 } as const
 
-export type MessageKindType = typeof MessageKind[keyof typeof MessageKind]
+export type MessageKeyType = typeof MessageKey[keyof typeof MessageKey]

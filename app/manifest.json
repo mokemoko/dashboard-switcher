@@ -33,6 +33,7 @@
       "all_frames": false
     }
   ],
+  "options_page": "pages/options.html",
   "permissions": [
     "storage"
   ]
