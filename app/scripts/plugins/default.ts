@@ -1,11 +1,10 @@
-import type { ExportableData, PluginConstructor } from './'
+import type { ExportableData, Plugin } from './'
 
-const DefaultPlugin: PluginConstructor = class {
-  type: string
+export default class DefaultPlugin implements Plugin {
+  static type = 'Default'
   url: string
 
   constructor(url: string) {
-    this.type = 'Default'
     this.url = url
   }
 
@@ -26,5 +25,3 @@ const DefaultPlugin: PluginConstructor = class {
     return this.url
   }
 }
-
-export default DefaultPlugin

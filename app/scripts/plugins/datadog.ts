@@ -1,14 +1,13 @@
-import type { ExportableData, PluginConstructor } from './'
+import type { ExportableData, Plugin } from './'
 import { getQueryParams } from '../util/dom'
 
 type QueryParamsKey = 'from_ts' | 'to_ts'
 
-const DatadogPlugin: PluginConstructor = class {
-  type: string
+export default class DatadogPlugin implements Plugin {
+  static type = 'Datadog'
   url: string
 
   constructor(url: string) {
-    this.type = 'Datadog'
     this.url = url
   }
 
@@ -35,5 +34,3 @@ const DatadogPlugin: PluginConstructor = class {
     return url.toString()
   }
 }
-
-export default DatadogPlugin

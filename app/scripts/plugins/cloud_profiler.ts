@@ -1,12 +1,13 @@
-import type { ExportableData, PluginConstructor } from './'
+import type { ExportableData, Plugin } from './'
 
-const CloudProfilerPlugin: PluginConstructor = class {
-  type: string
+export default class CloudProfilerPlugin implements Plugin {
+  static type = 'CloudProfiler'
   url: string
+  re: RegExp
 
   constructor(url: string) {
-    this.type = 'CloudProfiler'
     this.url = url
+    this.re = /;timespan=([^;?]+);end=([^;?]+)/
   }
 
   static matchWithURL(url: string): boolean {
@@ -16,6 +17,8 @@ const CloudProfilerPlugin: PluginConstructor = class {
 
   getData(): ExportableData {
     // FIXME:
+    const [, timespan, end] = location.href.match(this.re) || []
+    console.log(timespan, end)
     return {
       start_ms: 0,
       span_ms: 0,
@@ -24,9 +27,7 @@ const CloudProfilerPlugin: PluginConstructor = class {
 
   generateURL(data: ExportableData): string {
     // FIXME:
-    const [timespan, end, project] = ['', '', '']
-    return `https://console.cloud.google.com/profiler;timespan=${timespan};end=${end}?project=${project}`
+    const [timespan, end] = ['', '']
+    return this.url.replace(this.re, `;timespan=${timespan};end=${end}`)
   }
 }
-
-export default CloudProfilerPlugin

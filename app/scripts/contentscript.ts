@@ -2,7 +2,6 @@ import { getPluginFromURL } from './plugins'
 import { MessageKey } from './util/constant'
 
 const plugin = getPluginFromURL(location.href)
-console.log(`current page plugin : ${plugin.type}`)
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log(message)
@@ -10,7 +9,8 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   switch (message.key) {
     case MessageKey.getData:
-      res = plugin?.getData()
+      console.log(plugin)
+      res = plugin.getData()
       break
   }
 
