@@ -1,10 +1,9 @@
 import { getPluginFromURL } from './plugins'
 import { MessageKey } from './util/constant'
 
-const plugin = getPluginFromURL(location.href)
-
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log(message)
+  const plugin = getPluginFromURL(location.href)
   let res: any
 
   switch (message.key) {

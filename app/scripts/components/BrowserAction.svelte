@@ -28,12 +28,12 @@
     <nav>
       <ul>
         {#each links as link}
-          <li><a href='#' on:click={() => onClick(link.url)}>{link.name}</a></li>
+          <li><a href='#/' on:click={() => onClick(link.url)}>{link.name}</a></li>
         {/each}
         <li>{message}</li>
       </ul>
     </nav>
-    <button on:click={() => open('./options.html')}>設定</button>
+    <button on:click={() => window.open('./options.html')}>設定</button>
   </aside>
 </main>
 

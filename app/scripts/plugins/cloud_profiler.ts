@@ -7,7 +7,7 @@ export default class CloudProfilerPlugin implements Plugin {
 
   constructor(url: string) {
     this.url = url
-    this.re = /;timespan=([^;?]+);end=([^;?]+)/
+    this.re = /;timespan=([^;?/]+);end=([^;?/]+)/
   }
 
   static matchWithURL(url: string): boolean {
@@ -19,6 +19,7 @@ export default class CloudProfilerPlugin implements Plugin {
     // FIXME:
     const [, timespan, end] = location.href.match(this.re) || []
     console.log(timespan, end)
+    // 2021-09-28T15:24:48.634Z
     return {
       start_ms: 0,
       span_ms: 0,

@@ -30,7 +30,7 @@
       <div class="grid">
         <input type="text" placeholder="表示名" bind:value={link.name} required />
         <input type="text" placeholder="URL" bind:value={link.url} required />
-        <a href="#" role="button" class="contrast" on:click={() => onDelete(link.id)}>削除</a>
+        <a href="#/" role="button" class="contrast" on:click={() => onDelete(link.id)}>削除</a>
       </div>
     {/each}
     <button class="secondary" on:click={onAdd}>追加</button>
