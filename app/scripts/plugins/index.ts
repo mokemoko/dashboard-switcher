@@ -1,6 +1,7 @@
 import DatadogPlugin from './datadog'
 import DefaultPlugin from './default'
 import CloudProfilerPlugin from './cloud_profiler'
+import CloudTracePlugin from './cloud_trace'
 
 export interface ExportableData {
   start_ms: number
@@ -22,6 +23,7 @@ export interface Plugin {
 const plugins: PluginConstructor[] = [
   DatadogPlugin,
   CloudProfilerPlugin,
+  CloudTracePlugin,
   DefaultPlugin
 ]
 
